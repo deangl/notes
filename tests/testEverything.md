@@ -4,9 +4,7 @@ output: html_document
 toc: false
 mainfont: msyh
 ---
-<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
-<script type="text/javascript" charset="utf-8" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML,https://vincenttam.github.io/javascripts/MathJaxLocal.js"></script>
-
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
 [toc]
 # 测试各种功能
 如果可用，可为之后的笔记当例子
