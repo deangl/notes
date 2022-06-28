@@ -5,6 +5,7 @@ toc: false
 mainfont: msyh
 ---
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+{% include _mathjax_support.html %}
 # 测试各种功能
 如果可用，可为之后的笔记当例子
 
