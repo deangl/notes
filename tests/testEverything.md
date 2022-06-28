@@ -3,7 +3,6 @@ title: "Tests"
 output: html_document
 toc: false
 mainfont: msyh
-{% include _mathjax_support.html %}
 ---
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 
