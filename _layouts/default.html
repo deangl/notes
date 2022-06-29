@@ -10,12 +10,16 @@
     {% seo %}
     {% include head-custom.html %}
 
+    {% if page.toc %}
     <style>
     #toc div.h1 { margin-left: 0 }
     #toc div.h2 { margin-left: 1em }
     #toc div.h3 { margin-left: 2em }
     #toc div.h4 { margin-left: 3em }
+    #toc div.h5 { margin-left: 4em }
+    #toc div.h6 { margin-left: 5em }
     </style>
+    
     <script>
       document.addEventListener('DOMContentLoaded', function() {
 	  htmlTableOfContents();
@@ -49,6 +53,7 @@
 	  // module.exports is not defined
       }
     </script>
+    {% endif %}
   </head>
 
   <body>
