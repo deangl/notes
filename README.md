@@ -3,10 +3,10 @@ title: "DeangL 的笔记本"
 output: html_document
 mainfont: msyh
 use_math: true
+use_toc: true
 ---
 
-
-我会尝试在这写一些笔记。
+我会尝试在这写一些笔记。这是怎么了
 
 ## 配置
 ### Theme
