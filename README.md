@@ -1,11 +1,11 @@
 ---
 title: "DeangL 的笔记本"
 output: html_document
-toc: false
 mainfont: msyh
 use_math: true
 ---
-<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+
+
 我会尝试在这写一些笔记。
 
 ## 配置

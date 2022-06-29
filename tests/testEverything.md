@@ -1,12 +1,10 @@
 ---
 title: "测试"
 output: html_document
-toc: ture
 mainfont: msyh
 use_math: true
+use_toc: true
 ---
-* TOC
-{:toc}
 
 # 测试各种功能
 如果可用，可为之后的笔记当例子
