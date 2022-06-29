@@ -6,8 +6,7 @@ relative_links:
   enabled: true
   collections: true
 include:
-  - README.md
-  - head.html
+
 
 # Conversion
 markdown: kramdown
