@@ -29,3 +29,5 @@ kramdown:
   enable_coderay: false
   math_engine: mathjax
   syntax_highlighter: rouge
+
+theme: jekyll-theme-cayman
