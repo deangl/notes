@@ -4,7 +4,7 @@ output: html_document
 mainfont: msyh
 use_math: true
 ---
-{% include _toc.md %}
+<!-- {% include _toc.md %} -->
 
 我会尝试在这写一些笔记。
 
