@@ -3,8 +3,9 @@ title: "测试"
 output: html_document
 toc: ture
 mainfont: msyh
-usemathjax: true
+use_math: true
 ---
+
 [toc]
 
 # 测试各种功能
