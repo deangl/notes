@@ -14,8 +14,10 @@ use_math: true
 ## latex
 Inline 的$\sum_{i}^{j} \alpha_i^j = \beta$
 这个是好的，下面的是坏的。
+
+
 $$
-	\alpha = \sum_{i}^{j} \alpha_i^j
+	\alpha
 $$
 
 ## 贴图
