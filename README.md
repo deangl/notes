@@ -44,10 +44,12 @@ use_math: true
 	```
 2. 在某一个文件，如`_layouts\default.html`或`_includes\head-custom.html`中加上
 
-   ``` text
+   ``` html
+   {% raw %}
    {% if page.use_math %}
 	   {% include _mathjax_support.html %}
    {% endif %}
+   {% endraw %}
    ```
 
 ### wikilink
