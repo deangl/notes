@@ -5,8 +5,9 @@ mainfont: msyh
 use_math: true
 use_toc: true
 ---
+{% include _toc.md %}
 
-我会尝试在这写一些笔记。这是怎么了
+我会尝试在这写一些笔记。
 
 ## 配置
 ### Theme
