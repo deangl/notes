@@ -12,6 +12,7 @@ usemathjax: true
 
 ## latex
 Inline 的$\sum_{i}^{j} \alpha_i^j = \beta$
+
 $$
 \alpha = \sum_{i}^{j} \alpha_i^j
 $$
