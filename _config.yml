@@ -1,10 +1,13 @@
 plugins:
   - jekyll-relative-links
+  - jekyll-paginate
+  - jekyll-sitemap  
 relative_links:
   enabled: true
   collections: true
 include:
   - README.md
+  - head.html
 
 # Conversion
 markdown: kramdown
@@ -24,3 +27,5 @@ kramdown:
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
+  math_engine: mathjax
+  syntax_highlighter: rouge
