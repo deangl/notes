@@ -5,9 +5,7 @@ plugins:
 relative_links:
   enabled: true
   collections: true
-include:
-  - README.md
-  - head.html
+
 
 # Conversion
 markdown: kramdown
@@ -29,3 +27,5 @@ kramdown:
   enable_coderay: false
   math_engine: mathjax
   syntax_highlighter: rouge
+
+theme: jekyll-theme-slate
