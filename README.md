@@ -5,7 +5,7 @@ mainfont: msyh
 use_math: true
 use_toc: true
 ---
-{% include _toc.md %}
+<!-- {% include _toc.md %} -->
 
 我会尝试在这写一些笔记。
 
