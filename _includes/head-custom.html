@@ -1,6 +1,9 @@
 <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
+{% if page.use_math %}
+{% include _mathjax_support.html %}
+{% endif %}
 {% include head-custom-google-analytics.html %}
 
 <!-- You can set your favicon here -->
