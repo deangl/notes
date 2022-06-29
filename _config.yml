@@ -22,7 +22,6 @@ incremental: false
 # Markdown Processing
 kramdown:
   input: GFM
-  math_engine: katex
 #   hard_wrap: false
 #   auto_ids: true
 #   footnote_nr: 1
