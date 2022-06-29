@@ -12,10 +12,9 @@ use_math: true
 如果可用，可为之后的笔记当例子
 
 ## latex
-Inline 的$\sum_{i}^{j} \alpha_i^j = \beta$
-这个是好的，下面的是坏的。
+Inline 的$\sum_{i}^{j} \alpha_i^j = \beta$这个是好的。
 
-
+下面的是坏的：
 $$
 	\alpha
 $$
