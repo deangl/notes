@@ -1,14 +1,11 @@
 ---
-title: "笔记本的开始"
+title: "笔记本设置"
 output: html_document
 mainfont: msyh
 use_math: true
 toc: true
 categories: [计算机]
 ---
-我会尝试在这写一些笔记。
-
-## 配置
 ### Theme
 为了不被自己的配置搞乱，还是下载一份放到项目中。
 
@@ -59,7 +56,7 @@ categories: [计算机]
 ```
 的形式。
 
-### TOC
+### Table of Contents
 在Jekyll内有一套TOC的方法，可是要么1)不漂亮，在md文件中出现非标准的符号；要么2)麻烦，需要装一堆东西，或者甚至是本地要生成什么东西。
 
 然而这其实是一个简单的需求，`JavaScript`来干就是了。于是，在某模板中加入一段：
@@ -112,3 +109,34 @@ categories: [计算机]
 ```
 
 另外，在模板中的合适的位置加一个id为toc的div就可以。当metadata`toc:true`的时候，就会有TOC了。
+
+### 主页
+主页建立一个文档的列表，用下面的代码就好：
+
+``` html
+{% raw %}
+{% for cat in site.category-list %}
+### {{ cat }}
+<ul>
+  {% for page in site.pages %}
+      {% for pc in page.categories %}
+        {% if pc == cat %}
+          <li><a href=".{{ page.url }}">{{ page.title }}</a></li>
+        {% endif %}   <!-- cat-match-p -->
+      {% endfor %}  <!-- page-category -->
+  {% endfor %}  <!-- page -->
+</ul>
+{% endfor %}  <!-- cat -->
+### 未分类
+<ul>
+	{% for page in site.pages %}
+		{% unless page.categories %}
+			{% if page.title %}
+				<li><a href=".{{ page.url }}">{{ page.title }}</a></li>		
+			{% endif %}
+		{% endunless %}
+	{% endfor %}
+</ul>
+{% end raw %}
+```
+另外在`_config.yml`中要建立`category-list`这个变量。

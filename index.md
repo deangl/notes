@@ -23,7 +23,9 @@ use_math: true
 <ul>
 	{% for page in site.pages %}
 		{% unless page.categories %}
-          <li><a href=".{{ page.url }}">{{ page.title }}</a></li>		
+			{% if page.title %}
+				<li><a href=".{{ page.url }}">{{ page.title }}</a></li>		
+			{% endif %}
 		{% endunless %}
 	{% endfor %}
 </ul>
