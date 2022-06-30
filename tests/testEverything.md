@@ -3,6 +3,7 @@ title: "测试"
 output: html_document
 mainfont: msyh
 use_math: true
+category: [计算机|数学]
 ---
 
 # 测试各种功能
