@@ -62,6 +62,7 @@ categories: [计算机]
 然而这其实是一个简单的需求，`JavaScript`来干就是了。于是，在某模板中加入一段：
 
 ``` html
+{% raw %}
 {% if page.toc %}
     <style>
     #toc div.h1 { margin-left: 0 }
@@ -106,9 +107,10 @@ categories: [计算机]
       }
     </script>
 {% endif %}
+{% end raw %}
 ```
 
-另外，在模板中的合适的位置加一个id为toc的div就可以。当metadata`toc:true`的时候，就会有TOC了。
+另外，在模板中的合适的位置加一个id为toc的div就可以。当metadata中`toc:true`的时候，就会有TOC了。
 
 ### 主页
 主页建立一个文档的列表，用下面的代码就好：
