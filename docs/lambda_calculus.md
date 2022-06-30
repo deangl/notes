@@ -41,7 +41,7 @@ const plus1 = x => x+1;
 console.log(twice(plus1)(0));//可以返回2
 ```
 
-###应用
+### 应用
 ``` javascript
 const app = f => (x=> f(x))
 ```
