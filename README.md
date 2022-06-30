@@ -57,3 +57,57 @@ toc: true
 [说明](到目标的相对链接的形式)
 ```
 的形式。
+
+### TOC
+在Jekyll内有一套TOC的方法，可是要么1)不漂亮，在md文件中出现非标准的符号；要么2)麻烦，需要装一堆东西，或者甚至是本地要生成什么东西。
+
+然而这其实是一个简单的需求，`JavaScript`来干就是了。于是，在某模板中加入一段：
+
+``` html
+{% if page.toc %}
+    <style>
+    #toc div.h1 { margin-left: 0 }
+    #toc div.h2 { margin-left: 1em }
+    #toc div.h3 { margin-left: 2em }
+    #toc div.h4 { margin-left: 3em }
+    #toc div.h5 { margin-left: 4em }
+    #toc div.h6 { margin-left: 5em }
+    </style>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+	  htmlTableOfContents();
+      } );
+
+      function htmlTableOfContents() {
+	  var toc = document.getElementById("toc");
+	  var ref = document.querySelector("#main_content")
+	  var headings = [].slice.call(ref.querySelectorAll('h1, h2, h3, h4, h5, h6'));
+	  headings.forEach(function (heading, index) {
+              var ref = "toc" + index;
+              if ( heading.hasAttribute( "id" ) ) 
+		  ref = heading.getAttribute( "id" );
+              else
+		  heading.setAttribute( "id", ref );
+
+              var link = document.createElement( "a" );
+              link.setAttribute( "href", "#"+ ref );
+              link.textContent = heading.textContent;
+
+              var div = document.createElement( "div" );
+              div.setAttribute( "class", heading.tagName.toLowerCase() );
+              div.appendChild( link );
+              toc.appendChild( div );
+	  });
+      }
+
+      try {
+	  module.exports = htmlTableOfContents;
+      } catch (e) {
+	  // module.exports is not defined
+      }
+    </script>
+{% endif %}
+```
+
+另外，在模板中的合适的位置加一个id为toc的div就可以。当metadata`toc:true`的时候，就会有TOC了。

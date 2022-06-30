@@ -10,50 +10,7 @@
     {% seo %}
     {% include head-custom.html %}
 
-    {% if page.toc %}
-    <style>
-    #toc div.h1 { margin-left: 0 }
-    #toc div.h2 { margin-left: 1em }
-    #toc div.h3 { margin-left: 2em }
-    #toc div.h4 { margin-left: 3em }
-    #toc div.h5 { margin-left: 4em }
-    #toc div.h6 { margin-left: 5em }
-    </style>
-    
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-	  htmlTableOfContents();
-      } );                        
 
-      function htmlTableOfContents() {
-	  var toc = document.getElementById("toc");
-	  var ref = document.querySelector("#main_content")
-	  var headings = [].slice.call(ref.querySelectorAll('h1, h2, h3, h4, h5, h6'));
-	  headings.forEach(function (heading, index) {
-              var ref = "toc" + index;
-              if ( heading.hasAttribute( "id" ) ) 
-		  ref = heading.getAttribute( "id" );
-              else
-		  heading.setAttribute( "id", ref );
-
-              var link = document.createElement( "a" );
-              link.setAttribute( "href", "#"+ ref );
-              link.textContent = heading.textContent;
-
-              var div = document.createElement( "div" );
-              div.setAttribute( "class", heading.tagName.toLowerCase() );
-              div.appendChild( link );
-              toc.appendChild( div );
-	  });
-      }
-
-      try {
-	  module.exports = htmlTableOfContents;
-      } catch (e) {
-	  // module.exports is not defined
-      }
-    </script>
-    {% endif %}
   </head>
 
   <body>
