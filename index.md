@@ -11,11 +11,11 @@ use_math: true
 ### {{ cat }}
 <ul>
   {% for page in site.pages %}
-      {% for pc in page.categories %}
-        {% if pc == cat %}
+      <!-- {% for pc in page.categories %} -->
+      <!--   {% if pc == cat %} -->
           <li><a href="{{ page.url }}">{{ page.title }}</a></li>
-        {% endif %}   <!-- cat-match-p -->
-      {% endfor %}  <!-- page-category -->
+      <!--   {% endif %}   <\!-- cat-match-p -\-> -->
+      <!-- {% endfor %}  <\!-- page-category -\-> -->
   {% endfor %}  <!-- page -->
 </ul>
 {% endfor %}  <!-- cat -->
