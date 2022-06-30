@@ -4,6 +4,7 @@ output: html_document
 toc: false
 mainfont: msyh
 use_math: true
+categories: [ignore]
 ---
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 
