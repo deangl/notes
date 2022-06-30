@@ -1,9 +1,10 @@
 ---
-title: "DeangL 的笔记本"
+title: "笔记本的开始"
 output: html_document
 mainfont: msyh
 use_math: true
 toc: true
+categories: [计算机]
 ---
 我会尝试在这写一些笔记。
 
