@@ -107,7 +107,7 @@ categories: [计算机]
       }
     </script>
 {% endif %}
-{% end raw %}
+{% endraw %}
 ```
 
 另外，在模板中的合适的位置加一个id为toc的div就可以。当metadata中`toc:true`的时候，就会有TOC了。
@@ -139,6 +139,6 @@ categories: [计算机]
 		{% endunless %}
 	{% endfor %}
 </ul>
-{% end raw %}
+{% endraw %}
 ```
 另外在`_config.yml`中要建立`category-list`这个变量。
