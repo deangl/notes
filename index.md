@@ -11,14 +11,20 @@ use_math: true
 ### {{ cat }}
 <ul>
   {% for page in site.pages %}
-	{{ page.url }}{{ page.title }}
       {% for pc in page.categories %}
         {% if pc == cat %}
-          <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+          <li><a href=".{{ page.url }}">{{ page.title }}</a></li>
         {% endif %}   <!-- cat-match-p -->
       {% endfor %}  <!-- page-category -->
   {% endfor %}  <!-- page -->
 </ul>
 {% endfor %}  <!-- cat -->
-
+### 未分类
+<ul>
+	{% for page in site.pages %}
+		{% unless page.categories %}
+          <li><a href=".{{ page.url }}">{{ page.title }}</a></li>		
+		{% endunless %}
+	{% endfor %}
+</ul>
 
