@@ -7,9 +7,9 @@ use_math: true
 ---
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 
-{% for cat in site.category-list %}
-### {{ cat }}
-<ul>
+<!-- {% for cat in site.category-list %} -->
+<!-- ### {{ cat }} -->
+<!-- <ul> -->
   {% for page in site.pages %}
       <!-- {% for pc in page.categories %} -->
       <!--   {% if pc == cat %} -->
@@ -17,5 +17,5 @@ use_math: true
       <!--   {% endif %}   <\!-- cat-match-p -\-> -->
       <!-- {% endfor %}  <\!-- page-category -\-> -->
   {% endfor %}  <!-- page -->
-</ul>
-{% endfor %}  <!-- cat -->
+<!-- </ul> -->
+<!-- {% endfor %}  <\!-- cat -\-> -->
