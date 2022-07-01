@@ -17,6 +17,10 @@ $$
 	\alpha
 $$
 
+$$
+	\frac{a}{b}
+$$
+
 ## 贴图
 ![测试贴图](./img/test1.png)
 
@@ -27,6 +31,10 @@ $$
 
 ``` python
 def go(a,b):
-	print('{}:{}'.format(a,b))
-	return a+b
+    print('{}:{}'.format(a,b))
+    return a+b
 ```
+
+$$
+
+$$

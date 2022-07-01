@@ -23,7 +23,7 @@ categories: [计算机]
 		  },
 		  tex2jax: {
 		  inlineMath: [ ['$', '$'] ],
-		  displayMath: [ ['\\(', '\\)'] ], // 关键在这，解决 kramdown 把$$替换的问题
+		  displayMath: [ ['\\(', '\\)'],['\\[', '\\]'] ], // 关键在这，解决 kramdown 把$$替换的问题
 		  processEscapes: true,
 		  }
 	  });
@@ -131,7 +131,7 @@ categories: [计算机]
 {% endfor %}  <!-- cat -->
 ### 未分类
 <ul>
-	{% for page in site.pages %}
+	{% for page in site.pges %}
 		{% unless page.categories %}
 			{% if page.title %}
 				<li><a href=".{{ page.url }}">{{ page.title }}</a></li>		
