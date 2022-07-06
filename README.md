@@ -48,13 +48,142 @@ categories: [计算机]
    {% endif %}
    {% endraw %}
    ```
+3. 原来对于 `latex` 不支持通过 `edit-indirect` 编辑，自己写了一个patch，如下：
+
+``` emacs-lisp
+(defun tsc-markdown-edit-indirect-region-with-mode (mode-name)
+  (interactive "s")
+  (let* ((mode (markdown-get-lang-mode mode-name))
+         (beg (mark))
+         (end (point))
+	 (edit-indirect-guess-mode-function
+          (lambda (_parent-buffer _beg _end)
+            (funcall mode)))
+	 )
+    (edit-indirect-region beg end 'display)
+    )
+  )
+
+(defun tsc-markdown-edit-indirect-region-with-latex ()
+  (interactive (deactivate-mark))
+  (tsc-markdown-edit-indirect-region-with-mode "latex")
+  )
+
+(defun tsc-markdown-edit-math (pos)
+  (interactive "d")
+  (if (tsc-in-math-p pos)
+      (progn
+	(tsc-select-math-region)
+	(call-interactively 'tsc-markdown-edit-indirect-region-with-latex))
+    )
+  )
+
+
+(defun tsc-math-type (pos)
+  (interactive "d")
+  (save-excursion
+    (goto-char pos)
+    (if (tsc-in-math-p pos)
+	(progn
+	  (search-backward-regexp "[^\\]\\$")
+	  (let* ((b (string (char-after)))
+		 )
+	    (if (string= b "$")
+		"display"
+	      "inline")
+	    )
+	  )
+      )
+    )
+  )
+
+(defun tsc-markdown-edit-indirect-region-with-latex-inline-after (beg end)
+  (if (string= (tsc-math-type end) "inline")
+      (save-excursion
+	(goto-char end)
+	(delete-forward-char 1)
+	)
+      )
+  )
+
+
+
+(defun tsc-msg-math-type (pos)
+  (interactive "d")
+  (message "math type is %s" (tsc-math-type pos))
+  )
+
+(defun tsc-select-math-region ()
+  (interactive)
+  (search-backward-regexp "[^\\]\\$")
+  (forward-char)(forward-char)
+  (set-mark-command nil)
+  (backward-char)
+  (search-forward-regexp "[^\\]\\$")
+  (backward-char)  
+  )
+
+
+(defun tsc-face-at-point (pos)
+  (interactive "d")
+  (let ((face (or (get-char-property pos 'read-face-name)
+                  (get-char-property pos 'face))))
+    face))
+
+(defun tsc-msg-face (pos)
+  (interactive "d")
+  (message "face here is %s" (tsc-face-at-point pos))
+  )
+
+(defun tsc-point-has-face-p (face-name &optional pos)
+  (interactive "sFace-name:")
+  (let* (
+	 (pos (or pos (point)))
+	 (face-here (tsc-face-at-point pos))
+	 )
+    (if (listp face-here)
+	(cl-some  (lambda(x) (string= face-name x)) face-here)
+      (string= face-name face-here))
+    )
+  )
+
+
+(defun tsc-in-math-p (&optional pos)
+  (interactive)
+  (let* ((pos (or pos (point)))
+	 (in (or
+	      (tsc-point-has-face-p "markdown-math-face" pos)
+	      (and (tsc-point-has-face-p "markdown-markup-face" pos)
+		   (string= "$" (string (char-after)))
+		   )
+	      )
+	     )
+	 )
+    in
+    )
+  )
+
+(add-hook 'edit-indirect-after-commit-functions 'tsc-markdown-edit-indirect-region-with-latex-inline-after)
+
+(defun add-edit-indirect-latex-in-markdown (ori-func &rest args)
+  (let ((pos (point)))
+    (if (tsc-in-math-p pos)
+	(tsc-markdown-edit-math pos)
+      (apply ori-func args)
+      )
+    )
+  )
+(advice-add 'markdown-edit-code-block :around #'add-edit-indirect-latex-in-markdown)
+
+
+```
 
 ### wikilink
-不好意思，没有。还是用 
+不好意思，没有。还是用下面的形式。
 ``` text
 [说明](到目标的相对链接的形式)
 ```
-的形式。
+
 
 ### Table of Contents
 在Jekyll内有一套TOC的方法，可是要么1)不漂亮，在md文件中出现非标准的符号；要么2)麻烦，需要装一堆东西，或者甚至是本地要生成什么东西。
