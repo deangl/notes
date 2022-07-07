@@ -15,7 +15,8 @@ categories: [计算机]
 建一个 `c:\pythonMailProc\`的文件夹
 #### VBA准备
 你需要一点代码来调用Python，在outlook里Alt+F11打开VBA的编辑器，输入如下代码。这个代码在上面的文件夹中保存了本邮件的`msg`文件，并且对其调用 `python c:\pythonMailProc\dealMail.py`。
-``` vbscript
+
+``` vba
 Public Sub saveAndCallPython(Item As Outlook.MailItem)
     SaveAndCall Item, "python c:\pythonMailProc\dealMail.py", "c:\pythonMailProc\"
 
