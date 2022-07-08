@@ -2,10 +2,6 @@
 layout: default
 ---
 
-<div class="simpleNav">
-    <a href="http://zhangwenli.com" class="pageDiv">Home</a>
-    <a href="http://zhangwenli.com/blog" class="pageDiv">Blog</a>
-</div>
 <div class="pageTitle" id="tagTitle">Querying...</div>
 
 {% capture tags %}
@@ -13,7 +9,7 @@ layout: default
         {{ tag[0] }}
     {% endfor %}
 {% endcapture %}
-{% assign sortedtags = tags | split:' ' | sort %}
+{% assign sortedtags = tags | split:';' | sort %}
 
 {% for tag in sortedtags %}
 <div id="tag-{{ tag }}" class="tag-posts">
