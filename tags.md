@@ -1,18 +1,10 @@
 ---
-title: "tag finder"
-output: html_document
-toc: false
-mainfont: msyh
-use_math: true
-categories: [ignore]
-tags: [IT,jekyll]
+layout: default
+categories: [hide]
 ---
-
 <ul>
 	{% for page in site.pages %}
-		<!-- {% for tag in page.tags %} -->
         <li><a href=".{{ page.url }}">{{ page.title }}</a></li>
-		<!-- {% endfor %}  <\!-- tag -\-> -->
 	{% endfor %} <!-- page -->
 </ul>
 
