@@ -1,9 +1,12 @@
 ---
-layout: default
-categories: [hide]
+title: "tag finder"
+output: html_document
+toc: false
+mainfont: msyh
+use_math: true
+categories: [ignore]
+tags: [IT,jekyll]
 ---
-
-<div class="pageTitle" id="tagTitle">Querying...</div>
 
 <ul>
 	{% for page in site.pages %}
