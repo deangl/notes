@@ -6,6 +6,7 @@ mainfont: msyh
 use_math: true
 toc: false
 categories: [计算机]
+tags: [IT,javascript,python,async,异步]
 ---
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 
