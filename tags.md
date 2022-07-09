@@ -5,7 +5,7 @@ categories: [hide]
 <ul>
 	{% for page in site.pages %}
 		{% for tag in page.tags %}
-			<li><a class="tag-{{ tag }}" style="display:none" href=".{{ page.url }}">{{ page.title }}</a></li>
+			<li class="tag-{{ tag }}" style="display:none" ><a href=".{{ page.url }}">{{ page.title }}</a></li>
 		{% endfor %}
 	{% endfor %} <!-- page -->
 </ul>
@@ -24,7 +24,7 @@ categories: [hide]
 		console.log(tag)
 		var shows = document.getElementsByClassName("tag-"+tag)
 		console.log(shows)
-		shows.forEach(function(item)
+		Array.from(shows).forEach(function(item)
 		{item.style.display = 'block';}
 		)
 
