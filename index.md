@@ -5,6 +5,7 @@ toc: false
 mainfont: msyh
 use_math: true
 categories: [ignore]
+tags: [IT,notes,jekyll]
 ---
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 
