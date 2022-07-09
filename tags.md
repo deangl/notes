@@ -4,7 +4,9 @@ categories: [hide]
 ---
 <ul>
 	{% for page in site.pages %}
-        <li><a href=".{{ page.url }}">{{ page.title }}</a></li>
+		{% for tag in page.tags %}
+			<li><a class="tag-{{ tag }}" href=".{{ page.url }}">{{ page.title }}</a></li>
+		{% endfor %}
 	{% endfor %} <!-- page -->
 </ul>
 
