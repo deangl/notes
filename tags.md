@@ -6,11 +6,11 @@ categories: [hide]
 <div class="pageTitle" id="tagTitle">Querying...</div>
 
 <ul>
-{% for page in site.pages %}
-{% for tag in page.tags %}
-<li><a href=".{{ page.url }}">{{ page.title }}</a></li>
-{% endfor %}  <!-- tag -->
-{% endfor %} <!-- page -->
+	{% for page in site.pages %}
+		<!-- {% for tag in page.tags %} -->
+			<li><a href=".{{ page.url }}">{{ page.title }}</a></li>
+		<!-- {% endfor %}  <\!-- tag -\-> -->
+	{% endfor %} <!-- page -->
 </ul>
 
 
