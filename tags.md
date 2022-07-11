@@ -12,4 +12,4 @@ categories: [hide]
 	{% endfor %} <!-- page -->
 </ul>
 
-<script src="/source/tag-search.js"></script>
+<script src="/notes/source/tag-search.js"></script>
