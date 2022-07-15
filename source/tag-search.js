@@ -7,7 +7,7 @@ function getParameterByName(name) {
 
 window.onload = function() {
     var tag = getParameterByName('tag');
-    $('.tag'+tag).show();
+    $('.tag-'+tag).show();
     // var shows = document.getElementsByClassName("tag-"+tag);
     // Array.from(shows).forEach(function(item){item.style.display = 'block';});
 };
@@ -15,5 +15,5 @@ window.onload = function() {
 function goSearch(){
     var tag = $('#to-search').val();
     $('li').hide();
-    $('.tag'+tag).show();
+    $('.tag-'+tag).show();
 }
