@@ -5,17 +5,17 @@ categories: [hide]
 
 <div class="row demo-row">
 
-	<div class="col-xs-3">
+<div class="col-xs-3">
 	
-		<div><input type="text" value="" placeholder="Tag" class="form-control" id="to-search"></div>
+<div><input type="text" value="" placeholder="Tag" class="form-control" id="to-search"></div>
 
-	</div>
+</div>
 	
-	<div class="col-xs-3">
+<div class="col-xs-3">
 	
-		<a href="#fakelink" class="btn btn-block btn-lg btn-danger" id="go-search">查找</a>
+<a href="#fakelink" class="btn btn-block btn-lg btn-danger" id="go-search">查找</a>
 
-	</div>
+</div>
 
 </div>
 
