@@ -3,14 +3,10 @@ layout: default
 categories: [hide]
 ---
 
-<div class="row demo-row">
-<div class="col-xs-3">
 <input type="text" value="" placeholder="Tag" class="form-control" id="to-search">
-</div>
-<div class="col-xs-3">
-<a href="#fakelink" class="btn btn-block btn-lg btn-danger" id="go-search">查找</a>
-</div>
-</div>
+<button type="button" id="go-search" onclick="goSearch()">查找</button>
+
+
 
 <ul>
 	{% for page in site.pages %}

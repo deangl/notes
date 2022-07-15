@@ -7,6 +7,13 @@ function getParameterByName(name) {
 
 window.onload = function() {
     var tag = getParameterByName('tag');
-    var shows = document.getElementsByClassName("tag-"+tag);
-    Array.from(shows).forEach(function(item){item.style.display = 'block';});
+    $('.tag'+tag).show();
+    // var shows = document.getElementsByClassName("tag-"+tag);
+    // Array.from(shows).forEach(function(item){item.style.display = 'block';});
 };
+
+function goSearch(){
+    var tag = $('#to-search').value();
+    $('li').hide();
+    $('.tag'+tag).show();
+}
