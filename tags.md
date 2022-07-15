@@ -3,7 +3,7 @@ layout: default
 categories: [hide]
 ---
 
-<input type="text" value="" placeholder="Tag" class="form-control" id="to-search">
+<input type="text" placeholder="Tag" id="to-search">
 <button type="button" id="go-search" onclick="goSearch()">查找</button>
 
 

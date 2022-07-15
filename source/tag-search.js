@@ -13,7 +13,7 @@ window.onload = function() {
 };
 
 function goSearch(){
-    var tag = $('#to-search').value();
+    var tag = $('#to-search').val();
     $('li').hide();
     $('.tag'+tag).show();
 }
