@@ -3,10 +3,7 @@ layout: default
 categories: [hide]
 ---
 
-<input type="text" placeholder="Tag" id="to-search">
-<button type="button" id="go-search" onclick="goSearch()">查找</button>
-
-
+<input type="text" placeholder="Tag" id="to-search"><button type="button" id="go-search" onclick="goSearch()">查找</button>
 
 <ul>
 	{% for page in site.pages %}
