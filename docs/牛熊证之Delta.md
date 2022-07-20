@@ -22,7 +22,7 @@ categories: [数学,金融]
 根据下面的Optional-Stopping Theorem，有`P(S) = S-K`。接下来很显然Delta为1。
 ![doob theorem](./img/1656599594.png)
 
-详见 [本文](/notes/att/Stopped process.pdf)
+详见[本文](../att/Stopped process.pdf)
 
 对于上面这个结论，可以直观的理解一下。首先，任一碰到敲出价的路径，其有一条等概率路径在到期时落到相对于敲出价对称的位置(反射原理)。可知，所有碰到敲出价的路径其到期价格的期望也就是敲出价。反过来看，一个碰触敲出价则获得敲出价的payoff，其估值同碰触原过程一致。
 ![path1](./img/1656599652.png)
