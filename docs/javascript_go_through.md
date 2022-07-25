@@ -6,6 +6,7 @@ mainfont: msyh
 use_math: true
 toc: true
 categories: [计算机]
+tags: [javscript,Javascript,IT,promise,传参,对象,prototype,原型链]
 ---
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 

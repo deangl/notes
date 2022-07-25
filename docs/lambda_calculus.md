@@ -5,7 +5,7 @@ toc: false
 mainfont: msyh
 use_math: true
 toc: false
-categories: [数学,计算机]
+categories: [计算机]
 ---
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 

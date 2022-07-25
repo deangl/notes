@@ -5,6 +5,7 @@ toc: false
 mainfont: msyh
 use_math: true
 categories: [计算机]
+tags: [encoding,decoding,编码,解码,映射,IT]
 ---
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 

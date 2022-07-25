@@ -5,7 +5,7 @@ toc: false
 mainfont: msyh
 use_math: true
 categories: [计算机]
-tags: [IT,outlook]
+tags: [IT,outlook,python]
 ---
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 
@@ -17,7 +17,7 @@ tags: [IT,outlook]
 #### VBA准备
 你需要一点代码来调用Python，在outlook里Alt+F11打开VBA的编辑器，输入如下代码。这个代码在上面的文件夹中保存了本邮件的`msg`文件，并且对其调用 `python c:\pythonMailProc\dealMail.py`。
 
-``` vba
+``` VBA
 Public Sub saveAndCallPython(Item As Outlook.MailItem)
     SaveAndCall Item, "python c:\pythonMailProc\dealMail.py", "c:\pythonMailProc\"
 
@@ -48,6 +48,7 @@ End Sub
 
 End Sub
 ```
+
 #### Outlook 规则的准备
 我们需要Outlook在收到满足条件的邮件时触发处理，这个可以通过outlook的规则来实现。
 打开
@@ -74,6 +75,7 @@ End Sub
 pip install -U pypiwin32
 ```
 建一个文件`c:\pythonMailProc\dealMail.py`
+
 ``` python
 import sys
 import win32com.client

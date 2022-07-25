@@ -4,7 +4,8 @@ output: html_document
 toc: false
 mainfont: msyh
 use_math: true
-categories: [nsfr,监管,金融]
+categories: [金融]
+tags: [nsfr,监管,金融,流动性]
 ---
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 

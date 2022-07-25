@@ -5,7 +5,8 @@ toc: false
 mainfont: msyh
 use_math: true
 toc: false
-categories: [数学,金融]
+categories: [金融]
+tags: [牛熊证,衍生品,vol,delta-one]
 ---
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 “牛熊证”是一个曾经在香港市场活跃过一阵的工具，工具本身已经没有什么意思了，但是它有一个很有意思的结论：**一个连续观察的，One touch knock out 的 ITM 的香草期权，如果Knock out price 和 Strike 在同一个点，那么它是 Delta one 的。** 正好借此感受下下面几个概念。
