@@ -15,7 +15,10 @@
     <div id="header_wrap" class="outer">
       <header class="inner">
         {% if site.github.is_project_page %}
-        <a id="forkme_banner" href="/notes">Back to List</a>
+        <div id="forkme_banner" >
+	  <a href="/notes"> Back to List</a>&nbsp;&nbsp;&nbsp;
+	  <a href="/notes/tags"> Search the tags</a>
+	</div>
         {% endif %}
 
         <h1 id="project_title">{{ page.title | default: site.title }}</h1>
@@ -32,10 +35,10 @@
     </div>
 
     <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-	<p><a id="tag_search" href="/notes/tags">按Tag查找</a></p>
-      </footer>
-    </div>
+    <!-- <div id="footer_wrap" class="outer"> -->
+    <!--   <footer class="inner"> -->
+    <!-- 	<p><a id="tag_search" href="/notes/tags">按Tag查找</a></p> -->
+    <!--   </footer> -->
+    <!-- </div> -->
   </body>
 </html>
