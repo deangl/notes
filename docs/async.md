@@ -156,7 +156,7 @@ sync_call(log, 'sync print haha','xixi',logging=150)
 ```
 结果输出：
 ![log result](./img/1656600050.png)
-看到，`set_timeout`只是把`callback`和异步函数的参数push到了另一个**Loop**中。JavaScript的真异步主要是对这个**Loop**的实现更加省。这也是[我们实现Promise中](./javascript_go_through.html#promise)把`callback`函数加到一个`list`中就完成了的同样逻辑。
+看到，`set_timeout`只是把`callback`和异步函数的参数push到了另一个**Loop**中。JavaScript的真异步主要是对这个**Loop**的实现更加省。这也是[我们实现Promise中](./javascript_go_through.md#promise)把`callback`函数加到一个`list`中就完成了的同样逻辑。
 
 
 运行上面代码的时候，看到CPU的占用一直很高，这是由于持续的`while`循环的原因，下面使用`queue`进行一下优化，结果是在没有等待任务的时候，占用下来了。可是有还等待时，占用仍然很高。
