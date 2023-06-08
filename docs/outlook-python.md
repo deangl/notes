@@ -69,7 +69,7 @@ End Sub
 ![](./img/1657173631.png)
 保存好就OK了。
 
-###Python的部分
+### Python的部分
 我们要用win32com这个包来直接建立一个outlook的comobject来完成后面的工作，安装用：
 ``` powershell
 pip install -U pypiwin32
