@@ -1,7 +1,6 @@
 ---
 title: "Bell不等式"
 output: html_document
-toc: false
 mainfont: msyh
 use_math: true
 toc: false
