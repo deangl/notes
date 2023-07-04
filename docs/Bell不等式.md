@@ -5,7 +5,7 @@ mainfont: msyh
 use_math: true
 toc: false
 categories: [物理]
-tags: [物理,数学,量子,Aspect实验,概率]
+tags: [物理,数学,量子,Aspect实验,概率,bell,aspect]
 ---
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 
