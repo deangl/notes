@@ -51,8 +51,13 @@ $F$是一个数域，$f(x) \in F[x]$，根为$\alpha_1,\cdots,\alpha_n$。那么
 先考虑一下这个命题的问题。显然，并不是所有的$F(a+b) = F(a,b)$，例如$F = \mathbb{Q}, a = \pi, b = 2-\pi$。于是知道这个结论和原方程是有关的。最直接的想法是用某种方式把$V$代入到$f$中来得到一个关系，通过这个关系说明某个根在$F(v)$中。这个比较复杂，所以可能从数学归纳法入手。
 * 证明$V_1 =k_1\alpha_1+k_2\alpha_2, F(V_1) = F(\alpha_1,\alpha_2)$。
 * 另外，为了可以往下串，需要得一另一个多项式$h(x) \in F(x)$，使得$V,\alpha$是$h$的根。这时，如果有$g(x) \in F(x), g(V) = 0$，那么令$h = f\cdot g$ 就可以了。
-证明：
 
+证明：
+先证上面的两根的。若$\alpha_1 = \alpha_2$，自然是成立的，如果$\alpha_1 \ne \alpha_2$。于是可以找到$k$，满足：
+$$
+\forall 1 \le i,j \le n,~ \alpha_1 \ne \alpha_2 \rightarrow \alpha_1+k\alpha_2-k\alpha_i \ne \alpha_j
+$$
+这个说的是，对于$\sigma: \sigma(y) = \alpha_1+k\alpha_2-ky$不会把一个根映射到根。
 
 #### 正规子群
 定义
