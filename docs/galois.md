@@ -23,8 +23,6 @@ tags: [math,galois,伽罗瓦,群,域,多项式,方程,逼格]
 
 ### 理论、定义和证明
 
-
-
 #### 定义：域
 集合$K$:
 * 对两种二元运算 $+, \times$ 封闭
@@ -34,8 +32,6 @@ tags: [math,galois,伽罗瓦,群,域,多项式,方程,逼格]
 称$K$为域。
 
 #### 域扩张的次数
-
-
 
 #### 定义：可约和既约
 设 $K$ 为**系数域**，$f(x)$为域$K$的$x$的多项式。若$f(x)$能用域$K$因式分解，称在$K$的范围内**可约**，否则称为 **既约**。
@@ -81,6 +77,9 @@ $$
 证明：
 1. 对于$V$，它是$f_V$的一个根；又$f(\phi_i(V)) = f(\alpha_i) = 0 \rightarrow V $ 是 $f\cdot \phi_i $的根。考虑到$f_V$最小，由[引理p1](#引理p1)，$f_v \vert f\cdot \phi_i$，也就是说$V_k$都是$f\cdot \phi_i$的根。故$f(\phi_i(V_k)) = 0$。
 2. 若有$\phi_i(V_k) = \phi_j(V_k)$，有$f_v \vert (\phi_i - \phi_j)$，则$(\phi_i-\phi_j)(V) = 0 \rightarrow ~\phi_i(V) = \phi_j(v) \rightarrow \alpha_i = \alpha_j$，同$f$无重根矛盾。
+
+这个命题所表述的规律如下：
+![共轭](./img/1705333120.png)
 
 #### 正规子群
 定义
