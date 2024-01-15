@@ -70,13 +70,17 @@ $$
 再来找上面需要的$g(x)$。他的一个根是$\alpha_1 + k\alpha_2$，要凑出一些其它的根来，让系数域回到$F$。考虑根和系数的关系，找到一个“最对称”的根集：$V_{ij} = \alpha_i + k \alpha_j$。$g(x) = \prod \limits_{i,j} (x-V_{ij})$的系数域会回到$F$，同时由于$V = V_{12}$，$g(V) = 0$。于是得证。
 
 根据这个定理，我们可以得到《数学女孩5》上的两个引理：
-1. 如果$f(x)\in F[x]$的根是$\alpha_1,\cdots,\alpha_n$，无重。可以找到一个$\phi(x_1,\cdots,\x_n) = \sum \limits_{i=1}^n k_ix_i, k\in \mathbb{Z}$使得对于根的不同排列$\alpha_{p_i}$和$\alpha_{q_i}$，$\phi(\alpha_{p_i}) \ne \phi(\alpha_{q_i})$。
+1. 如果$f(x)\in F[x]$的根是$\alpha_1,\cdots,\alpha_n$，无重。可以找到一个$\phi(x_1,\cdots, x_n) = \sum \limits_{i=1}^n k_ix_i, k\in \mathbb{Z}$使得对于根的不同排列$\alpha_{p_i}$和$\alpha_{q_i}$，$\phi(\alpha_{p_i}) \ne \phi(\alpha_{q_i})$。
 2. 任意$\alpha_i$都可以表示为$\alpha_i = \phi_i(V)$。
 
 #### 引理共轭
+对上一段两个引理的 $V$ 和 $\phi_i$，设 $f_V(x) \in F[x]$ 满足 $f_V(V) = 0$的最小多项式，其根为$V_1,\cdots,V_n$，有$\phi_i(V_k)$是$\alpha_i$的一个排列。即：
+1. $\forall i$ 都有 $f(\phi_i(V_k)) = 0$。
+2. $\forall i\ne j$ 都有 $\phi_i(V_k) \ne \phi_j(V_k)$。
 
-我们根据单代数扩域定理，可以找到一个$V$，
-
+证明：
+1. 对于$V$，它是$f_V$的一个根；又$f(\phi_i(V)) = f(\alpha_i) = 0 \rightarrow V $ 是 $f\cdot \phi_i $的根。考虑到$f_V$最小，由[引理p1](#引理p1)，$f_v \vert f\cdot \phi_i$，也就是说$V_k$都是$f\cdot \phi_i$的根。故$f(\phi_i(V_k)) = 0$。
+2. 若有$\phi_i(V_k) = \phi_j(V_k)$，有$f_v \vert (\phi_i - \phi_j)$，则$(\phi_i-\phi_j)(V) = 0 \rightarrow ~\phi_i(V) = \phi_j(v) \rightarrow \alpha_i = \alpha_j$，同$f$无重根矛盾。
 
 #### 正规子群
 定义
