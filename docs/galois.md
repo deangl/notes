@@ -69,7 +69,13 @@ $$
 
 再来找上面需要的$g(x)$。他的一个根是$\alpha_1 + k\alpha_2$，要凑出一些其它的根来，让系数域回到$F$。考虑根和系数的关系，找到一个“最对称”的根集：$V_{ij} = \alpha_i + k \alpha_j$。$g(x) = \prod \limits_{i,j} (x-V_{ij})$的系数域会回到$F$，同时由于$V = V_{12}$，$g(V) = 0$。于是得证。
 
+根据这个定理，我们可以得到《数学女孩5》上的两个引理：
+1. 如果$f(x)\in F[x]$的根是$\alpha_1,\cdots,\alpha_n$，无重。可以找到一个$\phi(x_1,\cdots,\x_n) = \sum \limits_{i=1}^n k_ix_i, k\in \mathbb{Z}$使得对于根的不同排列$\alpha_{p_i}$和$\alpha_{q_i}$，$\phi(\alpha_{p_i}) \ne \phi(\alpha_{q_i})$。
+2. 任意$\alpha_i$都可以表示为$\alpha_i = \phi_i(V)$。
 
+#### 引理共轭
+
+我们根据单代数扩域定理，可以找到一个$V$，
 
 
 #### 正规子群
