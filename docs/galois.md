@@ -55,8 +55,12 @@ $K$的所有含$k$和$a_1,\cdots,\a_l$的子域的交集，记为$k(a_1,\cdots,\
 但是，又注意辗转相除法的结果仍在原系数域内，矛盾。
 故只能有$p(x) \vert f(x)$。
 
-**引理d1** 有一个强力的解读。从一个系数域外的根通过乘以一列**一次**多项式的方式回到原系数域的多项式，只有一种方法。另外也要注意，在多项式中，起到**质数**的地位的东西是**一阶**多项式$(x-\alpha)$，其中$\alpha$是根。
+**引理d1** 有一个强力的含义。从一个系数域外的根通过乘以一列**一次**多项式的方式回到原系数域的多项式，只有一种方法。另外也要注意，在多项式中，起到**质数**的地位的东西是**一阶**多项式$(x-\alpha)$，其中$\alpha$是根。
 
+#### 引理无重
+如果$f(x) \in F[x]$ 不可约，则$f(x)$无重根。
+证明：
+如果有重根$\alpha$，可知$f^{\prime}(\alpha) = 0$。而$f,f^{\prime} \in F[x]$，它俩有共同的根$\alpha$，所以由[引理d1](#引理d1) $f\vert f^{\prime}$。 但$f^{\prime}$比$f$低一阶，矛盾。
 
 #### 单代数扩域定理
 $F$是一个数域，$f(x) \in F[x]$，根为$\alpha_1,\cdots,\alpha_n$。那么可以找到数$V = \sum \limits_{i=1}^n k_i \alpha_i$，其中$k_i$为整数，使得：$F(V) = F(\alpha_1,\cdots,\alpha_n)$。
@@ -66,17 +70,17 @@ $F$是一个数域，$f(x) \in F[x]$，根为$\alpha_1,\cdots,\alpha_n$。那么
 * 另外，为了可以往下串，需要得一另一个多项式$h(x) \in F(x)$，使得$V,\alpha$是$h$的根。这时，如果有$g(x) \in F(x), g(V) = 0$，那么令$h = f\cdot g$ 就可以了。
 
 证明：
-先证上面第一条。若$\alpha_1 = \alpha_2$，自然是成立的，如果$\alpha_1 \ne \alpha_2$。于是可以找到$k$，满足：
+先证上面第一条。若$\alpha_1 = \alpha_2$，令$k=0$自然是成立的，如果$\alpha_1 \ne \alpha_2$。于是可以找到$k$，满足：
 $$
 \forall 1 \le i,j \le n,~ \alpha_1 \ne \alpha_2 \rightarrow \alpha_1+k\alpha_2-k\alpha_i \ne \alpha_j
 $$
-这个说的是，对于$\sigma: \sigma(y) = \alpha_1+k\alpha_2-ky$除了把$\alpha_2$映射到$\alpha_1$外不会把其他根映射到根。令$V = \alpha_1+k\alpha_2$, $l(x) = f(V-kx)$，$l(x)$的系数域被扩到$F(V)$。$l(x)$ 和 $f(x)$ 的公共根有且只有 $\alpha_2$，而且它们的系数都在域$F(v)$内。应用和证明 **引理d1** 一样的方式，可以得到，在$F(v)$内，$f(x),l(x)$的最大公约式只能是$(x-\alpha_2)^n$的形式，$n\alpha_2 \in F(V) \rightarrow \alpha_2 \in F(V) \rightarrow \alpha_1 \in F(V)$。所以$F(V) = F(\alpha_1,\alpha_2)$。
+这个说的是，对于$\sigma: \sigma(y) = \alpha_1+k\alpha_2-ky$除了把$\alpha_2$映射到$\alpha_1$外不会把其他根映射到根。令$V = \alpha_1+k\alpha_2$, $l(x) = f(V-kx)$，$l(x)$的系数域被扩到$F(V)$。$l(x)$ 和 $f(x)$ 的公共根有且只有 $\alpha_2$，而且它们的系数都在域$F(v)$内。应用和证明 **引理d1** 一样的方式，可以得到，在$F(v)$内，$f(x),l(x)$的最大公约式只能是$(x-\alpha_2)^i$的形式(注意到目前并没有要求$\alpha_2$不是重根)，$\alpha_2 \in F(V) \rightarrow \alpha_1 \in F(V)$。所以$F(V) = F(\alpha_1,\alpha_2)$。
 
 再来找上面需要的$g(x)$。他的一个根是$\alpha_1 + k\alpha_2$，要凑出一些其它的根来，让系数域回到$F$。考虑根和系数的关系，找到一个“最对称”的根集：$V_{ij} = \alpha_i + k \alpha_j$。$g(x) = \prod \limits_{i,j} (x-V_{ij})$的系数域会回到$F$，同时由于$V = V_{12}$，$g(V) = 0$。于是得证。
 
 根据这个定理，我们可以得到《数学女孩5》上的两个引理：
 1. 如果$f(x)\in F[x]$的根是$\alpha_1,\cdots,\alpha_n$，无重。可以找到一个$\phi(x_1,\cdots, x_n) = \sum \limits_{i=1}^n k_ix_i, k\in \mathbb{Z}$使得对于根的不同排列$\alpha_{p_i}$和$\alpha_{q_i}$，$\phi(\alpha_{p_i}) \ne \phi(\alpha_{q_i})$。
-2. 任意$\alpha_i$都可以表示为$\alpha_i = \phi_i(V)$。
+2. 任意$\alpha_i$都可以表示为$\alpha_i = \phi_i(V)$。其中$\phi_i$是$F$上的有理函数。
 
 #### 引理共轭
 对上一段两个引理的 $V$ 和 $\phi_i$，设 $f_V(x) \in F[x]$ 满足 $f_V(V) = 0$的最小多项式，其根为$V_1,\cdots,V_n$，有$\phi_i(V_k)$是$\alpha_i$的一个排列。即：
@@ -84,11 +88,21 @@ $$
 2. $\forall i\ne j$ 都有 $\phi_i(V_k) \ne \phi_j(V_k)$。
 
 证明：
-1. 对于$V$，它是$f_V$的一个根；又$f(\phi_i(V)) = f(\alpha_i) = 0 \rightarrow V $ 是 $f\cdot \phi_i $的根。考虑到$f_V$最小，由[引理p1](#引理p1)，$f_v \vert f\cdot \phi_i$，也就是说$V_k$都是$f\cdot \phi_i$的根。故$f(\phi_i(V_k)) = 0$。
-2. 若有$\phi_i(V_k) = \phi_j(V_k)$，有$f_v \vert (\phi_i - \phi_j)$，则$(\phi_i-\phi_j)(V) = 0 \rightarrow ~\phi_i(V) = \phi_j(v) \rightarrow \alpha_i = \alpha_j$，同$f$无重根矛盾。
+1. 对于$V$，它是$f_V$的一个根；又$f(\phi_i(V)) = f(\alpha_i) = 0 \rightarrow V $ 是 $f\cdot \phi_i $的根。考虑到$f_V$最小，由[引理d1](#引理d1)(注意分子)，$f_V \vert f\cdot \phi_i$，也就是说$V_k$都是$f\cdot \phi_i$的根。故$f(\phi_i(V_k)) = 0$。
+2. 若有$\phi_i(V_k) = \phi_j(V_k)$，有$f_V \vert (\phi_i - \phi_j)$，则$(\phi_i-\phi_j)(V) = 0 \rightarrow ~\phi_i(V) = \phi_j(v) \rightarrow \alpha_i = \alpha_j$，同$f$无重根矛盾。
 
 这个命题所表述的规律如下：
 ![共轭](./img/1705333120.png)
+这样，一个$V_k$就是一个根置换。那么，接下来直接还有问题：
+1)不同的$V_k$对应不同的置换吗？
+2)$V_k$覆盖所有的置换吗？
+
+
+
+
+#### 引理根置换群
+
+
 
 #### 正规子群
 定义
