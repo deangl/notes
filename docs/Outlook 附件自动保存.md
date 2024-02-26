@@ -9,9 +9,6 @@ tags: [outlook,vba,IT]
 ---
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 
-
-# Outlook 附件自动保存
-
 我们希望实现的功能是自动保存Outlook的一些附件，保存的依据应该是邮件的主题和文件的文件名，目标可以是不同的文件夹。进行如下设置：
 
 ## vba
@@ -73,7 +70,7 @@ End Sub
 ```
 
 ## Outlook
-Outlook 要用规则来实现，参见[outlook使用python一文](outlook-python.md#Outlook规则的准备)。
+Outlook 要用规则来实现，参见[outlook使用python一文](./outlook-python.md#Outlookrule)。
 
 ## 配置
 简单点，就用一个txt文件来实现吧，文件为 'C:\Users\[username]\AppData\Roaming\outlookAttSaver\config.txt'。每行一个配置。行内用';'分隔参数
