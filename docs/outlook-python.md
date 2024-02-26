@@ -49,8 +49,9 @@ End Sub
 End Sub
 ```
 
-#### Outlook 规则的准备
-我们需要Outlook在收到满足条件的邮件时触发处理，这个可以通过outlook的规则来实现。
+#### Outlook规则的准备
+
+我们需要Outlook在收到满足条件的邮件时触发处理，这个可以通过outlook的规则来实现。<a name="Outlookrule"></a>
 打开
 ![](./img/1657173520.png)
 新建一个规则
