@@ -21,6 +21,7 @@ incremental: false
 
 # Markdown Processing
 kramdown:
+  math_engine: mathjax  
   input: GFM
   hard_wrap: false
   auto_ids: true
@@ -30,6 +31,6 @@ kramdown:
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
   parse_block_html: true
-  math_engine: mathjax  
+
 
 category-list: [数学,金融,物理,计算机]  
