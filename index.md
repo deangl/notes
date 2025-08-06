@@ -16,11 +16,11 @@ tags: [IT,notes,jekyll]
       {% for pc in page.categories %}
         {% if pc == cat %}
           <li><a href=".{{ page.url }}">{{ page.title }}</a></li>
-        {% endif %}   <!-- cat-match-p -->
-      {% endfor %}  <!-- page-category -->
-  {% endfor %}  <!-- page -->
+        {% endif %} 
+      {% endfor %} 
+  {% endfor %} 
 </ul>
-{% endfor %}  <!-- cat -->
+{% endfor %} 
 ### 未分类
 <ul>
 	{% for page in site.pages %}
