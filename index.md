@@ -12,23 +12,23 @@ tags: [IT,notes,jekyll]
 {% for cat in site.category-list %}
 ### {{ cat }}
 <ul>
-{% for page in site.pages %}
-{% for pc in page.categories %}
-{% if pc == cat %}
-<li><a href=".{{ page.url }}">{{ page.title }}</a></li>
-{% endif %} 
-{% endfor %} 
-{% endfor %} 
+  {% for page in site.pages %}
+      {% for pc in page.categories %}
+        {% if pc == cat %}
+          <li><a href=".{{ page.url }}">{{ page.title }}</a></li>
+        {% endif %}   <!-- cat-match-p -->
+      {% endfor %}  <!-- page-category -->
+  {% endfor %}  <!-- page -->
 </ul>
-{% endfor %} 
+{% endfor %}  <!-- cat -->
 ### 未分类
 <ul>
-{% for page in site.pages %}
-{% unless page.categories %}
-{% if page.title %}
-<li><a href=".{{ page.url }}">{{ page.title }}</a></li>		
-{% endif %}
-{% endunless %}
-{% endfor %}
+	{% for page in site.pages %}
+		{% unless page.categories %}
+			{% if page.title %}
+				<li><a href=".{{ page.url }}">{{ page.title }}</a></li>		
+			{% endif %}
+		{% endunless %}
+	{% endfor %}
 </ul>
 
