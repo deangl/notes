@@ -4,7 +4,7 @@ output: html_document
 toc: false
 mainfont: msyh
 use_math: true
-categories: [金融]
+categories: [hide]
 tags: [数学|math|finance|衍生品|gamma|vol]
 ---
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
