@@ -58,7 +58,7 @@ $$
 &=& \sigma \Delta_t \frac{S_t}{B_t}(\frac{\mu-r}{\sigma} \mathrm{d}t + \mathrm{d} W_t)
 \end{eqnarray*}
 $$
-这里用到了$\frac{\mathrm{d} B_t }{B} = r$。
+这里用到了$\frac{\mathrm{d} B_t }{B} = r\mathrm{d}t$。
 
 * **Q:** 可是为什么要取折现？
 * **A:** 先回到我最喜欢的无风险利率为**0**的情况下来看。这个时候,有$\mathrm{d}V_t = \Delta_t dS_t$，对应的是 $\mathrm{d}V_t=\sigma \Delta_t dW_t$。可以尝试除$B_t$当成一个将“*无风险利率代换成0*”的手段。
