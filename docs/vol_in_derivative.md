@@ -15,49 +15,85 @@ tags: [math,finance,vol,衍生品,波动率,数学,随机过程,对冲]
 ### PDE下的解释
 
 比较直接，方程
-![](./img/1658277056.png)
+$$
+\begin{eqnarray*}
+V_t^{\prime} +rS_tV_x+\frac{1}{2}\sigma^2 S_t^2 V_{xx}^{\prime\prime}-rV_t =0
+\end{eqnarray*}
+$$
 中直接含$\sigma$的项，而这个项的来源是Ito引理。对于Ito过程：
-![](./img/1658277161.png)
+$$
+\begin{eqnarray*}
+	\mathrm{d} X_t = \Theta(t)\mathrm{d}t + \Delta(t)\mathrm{d}W_t
+\end{eqnarray*}
+$$
 有：
 若设函数 $f(t,x)$ 的偏导数 $f_t(t,x),f_x(t,x),f_{xx}(tx)$ 都有定义并且连续，则：
-![](./img/1658277307.png)
-其中，$d[X_t,X_t]$的结果是明确的。(因为我们目前只在现实测度下讨论，一切确定)。
+$$
+\begin{eqnarray*}
+\mathrm{d} f(t,X_t) = f_t(t,X_t)\mathrm{d}t + f_x(t,X_t)\mathrm{d}x + \frac{1}{2} f_{xx}(t,X_t) \mathrm{d}[X_t,X_t]
+\end{eqnarray*}
+$$
+其中，$\mathrm{d}[X_t,X_t]$的结果是明确的。(因为我们目前只在现实测度下讨论，一切确定)。
 
 ### 鞅定价下的解释
 
 我们先来看这个定价的过程
 
 1. 首先是通过完备市场的无风险资产$B$和标的资产$S$来复制期权。
-   ![](./img/1658277664.png)
- 
- 注意，这里已经用到了*Self-financing*的条件：
- 资产组合$\Pi_t = \sum\limits_{i=1}^n\omega_iS_{i,t}$ 是自融资的，如果有 $d\Pi_t = \sum\limits_{i=1}^{n}\omega_idS_{i,t}$。
- 这个式子的意思是，组合的净值的变动完全来自于组合内资产的价值的变动，而不会另有流入和流出(可以在组合内不同资产之间转化)。
+$$
+\begin{eqnarray*}
+\mathrm{d} V_t &=& \gamma_t \mathrm{d} B_t + \Delta_t \mathrm{d}S_t \\
+&=& (r \gamma_t B_t + \mu\Delta_t S_t) \mathrm{d}t + \sigma \Delta_t S_t \mathrm{d} W_t \\
+&=& [rV_t + (\mu - r)\Delta_t S_t] \mathrm{d} t + \sigma\Delta_tS_t \mathrm{d}W_t
+\end{eqnarray*}
+$$
+注意，这里已经用到了*Self-financing*的条件：
+资产组合$\Pi_t = \sum\limits_{i=1}^n\omega_iS_{i,t}$ 是自融资的，如果有 $\mathrm{d}\Pi_t = \sum\limits_{i=1}^{n}\omega_i \mathrm{d}S_{i,t}$。
+这个式子的意思是，组合的净值的变动完全来自于组合内资产的价值的变动，而不会另有流入和流出(可以在组合内不同资产之间转化)。
 2. 再取折现：
-   ![](./img/1658277853.png)
- 
- **Q:** 可是为什么要取折现？
- **A:** 先回到我最喜欢的无风险利率为**0**的情况下来看。这个时候,有$dV_t = \Delta_t dS_t$，对应的是 $dV_t=\sigma \Delta_t dW_t$。可以尝试除$B_t$当成一个将“*无风险利率代换成0*”的手段。
+$$
+\begin{eqnarray*}
+\mathrm{d}(\frac{V_t}{B_t}) &=& \frac{1}{B} \mathrm{d}V_t - \frac{V}{B^2} \mathrm{d} B_t \\
+&=& (\mu-r)\Delta_t \frac{S_t}{B_t} \mathrm{d}t+ \sigma \Delta_t \frac{S_t}{B_t} \mathrm{d} W_t \\
+&=& \sigma \Delta_t \frac{S_t}{B_t}(\frac{\mu-r}{\sigma} \mathrm{d}t + \mathrm{d} W_t)
+\end{eqnarray*}
+$$
+这里用到了$\frac{\mathrm{d} B_t }{B} = r\mathrm{d}t$。
+
+* **Q:** 可是为什么要取折现？
+* **A:** 先回到我最喜欢的无风险利率为**0**的情况下来看。这个时候,有$\mathrm{d}V_t = \Delta_t dS_t$，对应的是 $\mathrm{d}V_t=\sigma \Delta_t dW_t$。可以尝试除$B_t$当成一个将“*无风险利率代换成0*”的手段。
+
 3. 接下来，期待在某一个测度$\tilde{W}$下$(V_t/B_t)$可以是鞅。
-   ![](./img/1658277948.png)
+$$
+\begin{eqnarray*}
+\mathrm{d} \tilde{W_t} &=& \frac{\mu-r}{\sigma} \mathrm{d}t + \mathrm{d} W_t \\
+\mathrm{d} (\frac{V_t}{B_t}) &=& \sigma\Delta_t \frac{S_t}{B_t} \mathrm{d} \tilde{W_t}
+\end{eqnarray*}
+$$
 4. 然后，Girsanov 定理给了我们**一个**变换：
-令![](./img/1658278121.png)和![](./img/1658278561.png)
-有![](./img/1658279024.png)在$\tilde{P}$下是布朗运动。更丰富和详细的请见[知乎上这个专栏文章](https://zhuanlan.zhihu.com/p/391237874)。([这整个专栏都很不错](https://www.zhihu.com/column/c_1241781882632843264))
+令$\tilde{W_t} = W_t-[W,X]_t$和$\frac{\mathrm{d} \tilde{P}}{\mathrm{d} P} \vert _ {\mathscr{F}_t} = Z_t$
+有$\tilde{W_t}$在$\tilde{P}$下是布朗运动。更丰富和详细的请见[知乎上这个专栏文章](https://zhuanlan.zhihu.com/p/391237874)。([这整个专栏都很不错](https://www.zhihu.com/column/c_1241781882632843264))
 
 按上面的逻辑完成我们的目标：
 
-* 我们要找到一个$X$，它满足$d [W,X]_t = \frac{r-\mu}{\sigma} dt$。
+* 我们要找到一个$X$，它满足$\mathrm{d} [W,X]_t = \frac{r-\mu}{\sigma} dt$。
 * 然后利用他通过${\rm exp} (X_t - \frac{1}{2}[X,X]_t)$得到$Z_t$。
 * 那么我们只需要以$Z_t$为R-N导数进行一个测度变换，就可以得到一个所需的测度，这个测度下$\frac{V_t}{B_t}$是鞅，即风险中性的测度。
 
 这个流程程似乎很复杂。不过，实际使用时不用这么难：要注意到新测度下$S$的过程为：
 
-![](./img/1658278894.png)
+$$
+\begin{eqnarray*}
+\mathrm{d}S_t &=& \mu S_t \mathrm{d} t+ \sigma S_t (\mathrm{d}W_t^{\tilde{P}}-\frac{\mu-r}{\sigma}\mathrm{d}t)\\
+&=&rS_t \mathrm{d}t + \sigma S_t \mathrm{d} W_t^{\tilde{P}}
+\end{eqnarray*}
+$$
 
-上面的$Q$就是$\tilde{P} $，这就是一个以无风险利率为漂移项的几何布朗运动 *(为什么有这么碰巧的结果，可能有更深的对称性，希望有天我能回来把它补全)* ，只要对这个过程的结果求期望就好。
+
+这就是一个以无风险利率为漂移项的几何布朗运动 *(为什么有这么碰巧的结果，可能有更深的对称性，希望有天我能回来把它补全)* ，只要对这个过程的结果求期望就好。
 可以发现，上面的推导过程，对于 Pay Off 的形式其实没有过多的要求，所以有很强的适用性。
 
-回到本文的主题，可以看到，$dW$和$d\tilde{W}$前的系数保持了是一样的。所以$\sigma$是不变的。
+回到本文的主题，可以看到，$\mathrm{d}W$和$\mathrm{d}\tilde{W}$前的系数保持了是一样的。所以$\sigma$是不变的。
 
 **ちょっと待ってください**，这样就行了吗？需要注意，这里我们只拿到**一个**变换，有没有其它“放缩”过的测度变换，也能使$(V_t/B_t)$可是鞅呢？即一个改变布朗运动前的系数$\sigma$的。很显然，根据前一节PDE解释下的结论，应该是不行的。但网下没找到对此的表述，我们自己来证一下。
 
@@ -98,10 +134,13 @@ $V_{t +\Delta t} \sim V_t+\theta_t \Delta t + \Delta_{t+\Delta t} (S_{t+\Delta t
 换个角度，来看一个有点奇怪的问题。1)假设存在两个资产，波动率不一样。那么，同样参数的期权的价值是不一样的。但是，再假设两资产在到期日的收益率是一样的，那么，到业务终了，期权的Payoff是一样的。这样，我们知道，对冲产生的总收益应该是不同的，恰好应该是期权期初价值的区别，这到底是怎么实现的？2)类似可以有另一个问题，假如一个ATM的权，对冲到期末，假设期末价格还是ATM，那么期初期权的价值应该是通过对冲来实现的，可是How？
 
 对于问题2)，可以看看下面的两张图，它们中图的蓝线代表了买入Call在对冲时参数和实现波动率一致时，如何在对冲端赚到原始期权的价值的。
+
 ![](./img/1658209218.png)
+
 形象的，可以解释为这种情况注定了“反复横跳”(ATM说明要跳回来的)。而“反复”的过程中，存在对冲头寸大小和“下一步”涨跌的正相关，在高仓位的时候多赚了，低仓位的时候少赔些。我们需要“骑乘”$\Gamma$来赚钱。
 
 对于问题1)，下图也有所说明了区别，同上，可以理解为在同“下一步”涨跌正相关的基础上，“$\beta$"不同，以至于赚的不同。
+
 ![](./img/1658209243.png)
 
 需要注意，有的时候期权的 **Greeks** 处于很高的状态，业务可能被迫选择不完全跟进对冲，这个时候本来需要 **“骑乘”Gamma** 来赚的钱 就赚不到了。
