@@ -46,8 +46,8 @@ tags: [牛熊证,衍生品,vol,delta-one]
 
 * 每一步的价格变动步长：$\mathrm{d}s \propto \sqrt{\mathrm{d}t}$。这一步的损失$\mathrm{d}l \propto \mathrm{d}s \propto \sqrt{\mathrm{d}t}$。
 * 出现在Strike上下相邻的节点(邻点)，下一步都有1/2的概率穿越，所以只要累记这些点的概率和，虽然可以准确算，不过我们估一估就得了。
- 	*  在时间轴上，取一小段，这一小段的邻点数量反比于步长 $\mathrm{d}n \propto \frac{1}{\sqrt{\mathrm{d}t}}$。
- 	*  在一个时间切片上，出现在一个节点上的概率，实际上近似为真布朗运动的切片分布在这一个节点“控制范围”内的累积值。反比于采点密度，故正比于价格变动步长：$\mathrm{d}p \propto \mathrm{d}s \propto \sqrt{\mathrm{d}t}$。
- 	*  这一小段的上的全部损失有 $l \propto \mathrm{d}l \times \mathrm{d}n \times \mathrm{d}p $不随步长变化。
+  *  在时间轴上，取一小段，这一小段的邻点数量反比于步长 $\mathrm{d}n \propto \frac{1}{\sqrt{\mathrm{d}t}}$。
+  *  在一个时间切片上，出现在一个节点上的概率，实际上近似为真布朗运动的切片分布在这一个节点“控制范围”内的累积值。反比于采点密度，故正比于价格变动步长：$\mathrm{d}p \propto \mathrm{d}s \propto \sqrt{\mathrm{d}t}$。
+  *  这一小段的上的全部损失有 $l \propto \mathrm{d}l \times \mathrm{d}n \times \mathrm{d}p $不随步长变化。
 
 于是，我们证明了损失不会收敛到零，也说明了*0-1*对冲对于香草期权不是一个有效的对冲手段。(事实上，上面的问题和Ito Lemma中的二阶项的原理是一致的)。
