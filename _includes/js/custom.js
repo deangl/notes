@@ -1,3 +1,22 @@
+// --- Enable Chinese search ---
+// lunr's default trimmer strips all non-ASCII tokens (JS \w is ASCII-only),
+// which would delete every CJK token. Replace it with a no-op.
+lunr.trimmer = function (token) { return token; };
+lunr.Pipeline.registerFunction(lunr.trimmer, 'noop-trimmer');
+
+// lunr's tokenizer only splits on whitespace/hyphens, so a Chinese phrase is
+// indexed as one token. Insert a space between adjacent Han characters so the
+// original tokenizer yields one token per character.
+var _origTokenizer = lunr.tokenizer;
+var _han = /[\u4e00-\u9fff]/g;
+lunr.tokenizer = function (str, metadata) {
+  if (!lunr.tokenizer.separator) lunr.tokenizer.separator = _origTokenizer.separator;
+  if (typeof str === 'string') {
+    str = str.replace(_han, function (ch, offset) { return offset > 0 ? ' ' + ch : ch; });
+  }
+  return _origTokenizer.call(this, str, metadata);
+};
+
 // Sidebar toggle: hidden by default on desktop, button in the main header shows/hides it.
 jtd.onReady(function () {
   var toggle = document.getElementById('jtd-nav-toggle');
