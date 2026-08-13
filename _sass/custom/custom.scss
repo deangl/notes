@@ -1,13 +1,24 @@
 // Just the Docs customization.
 
-// Sidebar toggle button (in the main header): desktop only.
+// Nav toggle button: fixed at the viewport top-left corner (desktop only).
 #jtd-nav-toggle {
   display: none;
 
   @include mq(md) {
+    position: fixed;
+    top: $sp-3;
+    left: $sp-3;
+    z-index: 100;
     display: flex;
     align-items: center;
-    margin-right: $sp-2;
+    justify-content: center;
+    width: $sp-7;
+    height: $sp-7;
+    padding: 0;
+    color: $link-color;
+    background-color: $body-background-color;
+    border: $border $border-color;
+    border-radius: $border-radius;
   }
 }
 
@@ -23,7 +34,8 @@
   }
 
   .side-bar + .main {
-    margin-left: 0;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   body.jtd-nav-open {
@@ -37,10 +49,11 @@
         #{$nav-width},
         calc((100% - #{$nav-width + $content-width}) / 2 + #{$nav-width})
       );
+      margin-right: auto;
     }
   }
 
-  // Wider reading area: 80% of the page width.
+  // Wider reading area: 80% of the page width, centered.
   .main {
     max-width: 80%;
   }
