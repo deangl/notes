@@ -1,9 +1,9 @@
-# title: Slate theme
-# description: Slate is a theme for GitHub Pages.
-# show_downloads: true
-# google_analytics:
-# theme: jekyll-theme-slate
+# theme: just-the-docs/just-the-docs
+remote_theme: just-the-docs/just-the-docs
+title: "DeangL 的笔记本"
+description: "数学、物理、金融、计算机学习笔记"
 plugins:
+  - jekyll-remote-theme
   - jekyll-relative-links
   # - jekyll-paginate
   # - jekyll-sitemap  
