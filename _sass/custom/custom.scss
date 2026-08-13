@@ -1,0 +1,47 @@
+// Just the Docs customization.
+
+// Sidebar toggle button (in the main header): desktop only.
+#jtd-nav-toggle {
+  display: none;
+
+  @include mq(md) {
+    display: flex;
+    align-items: center;
+    margin-right: $sp-2;
+  }
+}
+
+// Clicking a category row expands/collapses its list (custom.js).
+.nav-category {
+  cursor: pointer;
+}
+
+// Desktop: sidebar hidden by default, shown when body.jtd-nav-open.
+@include mq(md) {
+  .side-bar {
+    display: none;
+  }
+
+  .side-bar + .main {
+    margin-left: 0;
+  }
+
+  body.jtd-nav-open {
+    .side-bar {
+      display: flex;
+    }
+
+    // Restore the theme's lg margin so content clears the fixed sidebar.
+    .side-bar + .main {
+      margin-left: Max(
+        #{$nav-width},
+        calc((100% - #{$nav-width + $content-width}) / 2 + #{$nav-width})
+      );
+    }
+  }
+
+  // Wider reading area: 80% of the page width.
+  .main {
+    max-width: 80%;
+  }
+}

@@ -1,23 +1,11 @@
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-      TeX: {
-	  equationNumbers: {
-              autoNumber: "AMS"
-	  }
-      },
-      tex2jax: {
-	  inlineMath: [ ['$', '$'] ],
-	  displayMath: [ ['$$', '$$'],['\\(', '\\)'],['\\[', '\\]'] ],  // 关键在这，解决 kramdown 把$$替换的问题
-	  processEscapes: true,
-      }
-  });
-  MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
-      alert("Math Processing Error: "+message[1]);
-  });
-  MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
-      alert("Math Processing Error: "+message[1]);
-  });
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    tags: 'ams'
+  }
+};
 </script>
-<script type="text/javascript" async
-	src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>

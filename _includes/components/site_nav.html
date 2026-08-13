@@ -1,0 +1,31 @@
+{%- comment -%}
+  Custom navigation: categories (site.category-list) as top-level items,
+  article lists drill down under each. Uses the theme's nav-list markup so the
+  theme CSS/JS handle expand/collapse and current-page highlighting.
+{%- endcomment -%}
+
+<nav aria-label="Main" id="site-nav" class="site-nav">
+  <ul class="nav-list">
+    <li class="nav-list-item">
+      <a href="{{ '/' | relative_url }}" class="nav-list-link">主页</a>
+    </li>
+    {%- for cat in site.category-list -%}
+      {%- assign cat_pages = site.html_pages | where_exp: "p", "p.categories contains cat" -%}
+      {%- unless cat_pages.size == 0 -%}
+      <li class="nav-list-item">
+        <button class="nav-list-expander btn-reset" aria-label="{{ cat }}" aria-expanded="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+        </button>
+        <div class="nav-category">{{ cat }}</div>
+        <ul class="nav-list">
+          {%- for p in cat_pages -%}
+          <li class="nav-list-item">
+            <a href="{{ p.url | relative_url }}" class="nav-list-link">{{ p.title }}</a>
+          </li>
+          {%- endfor -%}
+        </ul>
+      </li>
+      {%- endunless -%}
+    {%- endfor -%}
+  </ul>
+</nav>

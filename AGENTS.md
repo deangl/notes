@@ -23,7 +23,13 @@ tags: [标签, ...]
 ```
 
 - `categories` must be one of `数学 | 金融 | 物理 | 计算机` (`category-list` in `_config.yml`). Anything else lands in 未分类. Note the field is plural (`categories`, `tags`), and `output: html_document` is required (leftover from R Markdown — keep it).
-- `use_math: true` loads MathJax via `_includes/head_custom.html` (Just the Docs' customization hook) → `_mathjax_support.html`. `toc:` is now a harmless leftover — the theme renders a sidebar TOC automatically. Both optional.
+- `use_math: true` loads MathJax via `_includes/head_custom.html` (Just the Docs' customization hook) → `_mathjax_support.html` (MathJax v3, jsdelivr CDN). `toc:` is now a harmless leftover — the theme renders a sidebar TOC automatically. Both optional.
+
+## Custom overrides (all Just the Docs hooks, site side)
+
+- `_includes/components/site_nav.html` — replaces the theme nav: categories from `site.category-list` with drill-down article lists (theme's `.nav-list`/`.nav-list-expander` markup, so expand/collapse + current-page highlight still work). New notes appear automatically via `site.html_pages | where_exp`.
+- `_includes/header_custom.html` + `_includes/js/custom.js` — sidebar is hidden by default on desktop; the header hamburger toggles `body.jtd-nav-open`.
+- `_sass/custom/custom.scss` — hides the sidebar by default and widens `.main` to 80% of page width.
 
 ## Content conventions (these are enforced by quirks, not taste)
 
