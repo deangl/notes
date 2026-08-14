@@ -35,6 +35,8 @@ tags: [标签, ...]
 
 - **No wikilinks.** Use relative links: `[说明](./目标文件.md)` — the `jekyll-relative-links` plugin rewrites `.md` targets at build. Same for images: `![alt](./img/foo.png)`.
 - **Math:** inline `$...$`, display `$$...$$`. Kramdown bug: an underscore in inline math (e.g. subscripts) can be parsed as italics and drop the `$` delimiters — workaround is a space before the underscore in the math.
+  - 触发条件（2026-08 全站排查确认）：Kramdown 只认 `$$...$$` 为数学块，单 `$...$` 是普通文本，其中的 `_` 会参与强调解析。真正破坏需要「一行内多个 `$...$` 的紧贴下划线**跨 span 配对**成 `_..._`，且开启的 `_` 前是非字母、关闭的 `_` 后不是字母数字」。典型触发例：`$q_{cm} = 100 q_m$、$\dot{q}_{cm} = 100 \dot{q}_m$...`（已修复）。安全的写法（全站约 800 处）：`a_{ij}`、`g_{nm}`、`\partial_i` 这类下标 `_` 前是字母，不触发；`s _t`、`\sigma _X`、`[x _0] _{mn}` 这类下划线前带空格也安全。
+  - 判定/验证：可下载 kramdown gem 解包看 `lib/kramdown/parser/kramdown/emphasis.rb`（github-pages 用 kramdown 2.4.0，规则：`_` 前文本以字母结尾则不开强调）。线上验证可抓 `https://deangl.github.io/notes/docs/页面.html`，检查 `<em>` 内是否出现 LaTeX 反斜杠。
 - Don't touch `tests/` — inherited from upstream slate and only matters for test pages.
 
 ## Build & verify
