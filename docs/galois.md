@@ -80,12 +80,12 @@ $$
 $$
 这个说的是，对于$\sigma: \sigma(y) = \alpha_1+k\alpha_2-ky$除了把$\alpha_2$映射到$\alpha_1$外不会把其他根映射到根。这样的 $k$ 存在：对每一对 $(i,j),~ i\ne 2$ 只有一个 $k$ 被排除，被排除的 $k$ 值有限，故可取整数避开。令$V = \alpha_1+k\alpha_2$, $l(x) = f(V-kx)$，$l(x)$的系数域被扩到$F(V)$。$l(x)$ 和 $f(x)$ 的公共根有且只有 $\alpha_2$，而且它们的系数都在域$F(V)$内。在 $F(V)$ 内对 $f(x), l(x)$ 做辗转相除法，得到的最大公因式属于 $F(V)[x]$；它俩的公共根有且只有 $\alpha_2$，故最大公因式只能是 $(x-\alpha_2)^i$ 的形式（这里并不要求 $\alpha_2$ 不是重根），于是 $\alpha_2 \in F(V)$。由 $\alpha_1 = V - k\alpha_2$ 得 $\alpha_1 \in F(V)$，所以$F(V) = F(\alpha_1,\alpha_2)$。
 
-再来找上面需要的$g(x)$。他的一个根是$\alpha_1 + k\alpha_2$，要凑出一些其它的根来，让系数域回到$F$。考虑根和系数的关系，找到一个“最对称”的根集：$V_{ij} = \alpha_i + k \alpha_j$。$g(x) = \prod \limits_{i,j} (x-V_{ij})$的系数域会回到$F$，同时由于$V = V_{12}$，$g(V) = 0$。于是得证。
+再来找上面需要的$g(x)$。他的一个根是$\alpha_1 + k\alpha_2$，要凑出一些其它的根来，让系数域回到$F$。考虑根和系数的关系，找到一个“最对称”的根集：$V_{ij} = \alpha_i + k \alpha_j$， 令$g(x) = \prod \limits_{i,j} (x-V_{ij})$。它的系数都是$\alpha$的对称式，于是能由初等对称多项式组成，而初等对称多项式都是$f(x)$的系数，所以$g(x)$的系数域会回到$F$，同时由于$V = V_{12}$，$g(V) = 0$。于是得证。
 
 根据这个定理，我们可以得到《数学女孩5》上的两个引理：
 
-1. 如果$f(x)\in F[x]$的根是$\alpha_1,\cdots,\alpha_n$，无重。可以找到一个$\phi(x_1,\cdots, x_n) = \sum \limits_{i=1}^n k_ix_i, ~k_i\in \mathbb{Z}$使得对于根的不同排列$\alpha_{p_i}$和$\alpha_{q_i}$，$\phi(\alpha_{p_i}) \ne \phi(\alpha_{q_i})$。
-2. 任意$\alpha_i$都可以表示为$\alpha_i = \phi_i(V)$。其中$\phi_i$是$F$上的有理函数。
+1. 沿用上面第一步的证明可知：如果$f(x)\in F[x]$的根是$\alpha_1,\cdots,\alpha_n$，无重。可以找到一个$\phi(x_1,\cdots, x_n) = \sum \limits_{i=1}^n k_ix_i, ~k_i\in \mathbb{Z}$使得对于根的不同排列$\alpha_{p_i}$和$\alpha_{q_i}$，$\phi(\alpha_{p_i}) \ne \phi(\alpha_{q_i})$。
+2. 任意$\alpha_i$都可以表示为$\alpha_i = \phi_i(V)$。其中$\phi_i$是$F$上的有理函数($F(V)$的任意成员都是$F$的有理函数)。
 
 #### 引理共轭
 
