@@ -66,7 +66,7 @@ $K$的所有含$F$和$a_1,\cdots,a_l$的子域的交集，记为$F(a_1,\cdots,a_
 
 $F$是一个数域，$f(x) \in F[x]$，根为$\alpha_1,\cdots,\alpha_n$。那么可以找到数$V = \sum \limits_{i=1}^n k_i \alpha_i$，其中$k_i$为整数，使得：$F(V) = F(\alpha_1,\cdots,\alpha_n)$。
 
-先考虑一下这个命题的问题。显然，并不是所有的$F(a+b) = F(a,b)$，例如$F = \mathbb{Q}, a = \pi, b = 2-\pi$。于是知道这个结论和原方程是有关的。比如，我们知道有方程的根是$\sqrt{2}, \sqrt{3}$。考虑$F(\sqrt{2}+\sqrt{3})$中有$\sqrt{2}+\sqrt{3}$，从而有$1/(\sqrt{2}+\sqrt{3} = \sqrt{3}-\sqrt{2}$，而进一步有$\sqrt{2}$ 和 $\sqrt{3}$。
+先考虑一下这个命题的问题。显然，并不是所有的$F(a+b) = F(a,b)$，例如$F = \mathbb{Q}, a = \pi, b = 2-\pi$。于是知道这个结论和原方程是有关的。比如，我们知道有方程的根是$\sqrt{2}, \sqrt{3}$。考虑$F(\sqrt{2}+\sqrt{3})$中有$\sqrt{2}+\sqrt{3}$，从而有$1/(\sqrt{2}+\sqrt{3}) = \sqrt{3}-\sqrt{2}$，而进一步有$\sqrt{2}$ 和 $\sqrt{3}$。
 
 最直接的想法是用某种方式把$V$代入到$f$中来得到一个关系，通过这个关系说明某个根在$F(V)$中。这个比较复杂，所以可能从数学归纳法入手。
 
@@ -89,7 +89,7 @@ $$
 
 #### 引理共轭
 
-对上一段两个引理的 $V$ 和 $\phi_i$，设 $f_V(x) \in F[x]$ 是 $V$ 在 $F$ 上的极小多项式（即满足 $f_V(V) = 0$ 且不可约），其根为$V_1,\cdots,V_m$（$m = [F(V):F]$，根互异），则$\phi_i(V_k)$是$\alpha_i$的一个排列。即：
+对上一段两个引理的 $V$ 和 $\phi_i$，设 $f_V(x) \in F[x]$ 是 $V$ 在 $F$ 上的极小多项式（即满足 $f_V(V) = 0$ 且不可约），其根为$V_1,\cdots,V_m$（$m = [F(V):F]$，根互异），则对每个固定的 $k$，集合 $\{\phi_1(V_k),\cdots,\phi_n(V_k)\}$ 都是根 $\{\alpha_1,\cdots,\alpha_n\}$ 的一个排列。即：
 
 1. $\forall i$ 都有 $f(\phi_i(V_k)) = 0$。
 2. $\forall i\ne j$ 都有 $\phi_i(V_k) \ne \phi_j(V_k)$。
