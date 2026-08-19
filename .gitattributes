@@ -1,0 +1,2 @@
+# 统一文本文件行尾，避免 autocrlf 造成的假改动噪音
+*.md text eol=lf
