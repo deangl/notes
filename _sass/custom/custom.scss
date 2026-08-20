@@ -58,3 +58,11 @@
     max-width: 80%;
   }
 }
+
+// The theme forces uppercase on h4/.text-delta (a "label" style), which
+// uppercases latin identifiers in body headings (e.g. 引理d1 → 引理D1).
+// Restore normal case and letter-spacing for content headings.
+.main-content h4 {
+  text-transform: none;
+  letter-spacing: normal;
+}
