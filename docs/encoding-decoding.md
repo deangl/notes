@@ -66,6 +66,8 @@ except Exception as e:
 4. 有一个特别的 $du(eg(dg(eu(c))))=c$
 
 在emacs中，也可以简单的测试：
+
 ![](./img/1657172949.png)
+
 上面第一个是正常对程序input as gbk, output as gbk; 第二个是 input as gbk, output as utf-8; 第三个是 input as utf-8, output as gbk。
 

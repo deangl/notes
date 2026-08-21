@@ -92,9 +92,13 @@ console.log('Co.v:', Co.v, ' Co.showDoubleV:', Co.showDoubleV());
 // Co.v: 1  Co.showDoubleV: 2
 ```
 上面两个方式，生成的结果都是类似的。
+
 ![](./img/1656600266.png)
+
 只有constructor不一样。
+
 ![](./img/1656600285.png)
+
 实际上，用`constructor`来New一个对象的过程在[MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new)上说得比较清楚：
 
 > new constructor[([arguments])]
@@ -334,7 +338,9 @@ console.log('--------------------------------------');
 logAsync('先','后');
 ```
 结果：
+
 ![](./img/1656600321.png)
+
 上面定义了一个同步的syncTimeout函数，调用等也还都用callback的模式，可以看到同setTimeout的区别。显然，区别来自于setTimeout的本身的异步性。
 那么，为什么要用callback的方式写代码呢？基本是因为JavaScript的异步原生函数都是用callback的方式提供接口的，而callback的模式，天然的提供了一个函数运行中实现功能的两条支路：一条当场执行完，另一条交由别人处理。
 

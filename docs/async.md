@@ -155,7 +155,9 @@ sync_call(log, 'sync print haha','xixi',logging=150)
 
 ```
 结果输出：
+
 ![log result](./img/1656600050.png)
+
 看到，`set_timeout`只是把`callback`和异步函数的参数push到了另一个**Loop**中。JavaScript的真异步主要是对这个**Loop**的实现更加省。这也是[我们实现Promise中](./javascript_go_through.md#promise)把`callback`函数加到一个`list`中就完成了的同样逻辑。
 
 
