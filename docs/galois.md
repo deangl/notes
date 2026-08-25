@@ -36,9 +36,11 @@ tags: [math,galois,伽罗瓦,群,域,多项式,方程,逼格]
 如果$K$中所有的元素在$F$上都是代数元，则$K/F$叫作一个**代数扩张**。
 $K$的所有含$F$和$a_1,\cdots,a_l$的子域的交集，记为$F(a_1,\cdots,a_l)$，叫$a_1,\cdots,a_l$生成的$F$的扩张。若$\alpha$是代数元，则$F(\alpha)$叫作$F$的简单代数扩张。
 
-目前我们只知道$\alpha$是代数元，可是不知道$F(\alpha)$的所有元素都是代数元。不过这是可以简单证明的：
-* 设$f(\alpha) = 0, b = h(\alpha), h\in F[x]$
+目前我们只知道$\alpha$是代数元，可是不知道$F(\alpha)$的所有元素都是代数元。不过这是可以证明的：
+* 设$f$是$\alpha$在$F$上的极小多项式（故$f$不可约），$f(\alpha) = 0$。$F(\alpha)$ 的一个元素总可以写成$b = h(\alpha)$。 $h$ 是 $F$ 上的有理式。
 * 不妨令$f$是$n$次的，那么有 $\alpha^n$ 可以由$1,\alpha,\alpha^2,\cdots, \alpha^{n-1}$表示出来，进而，$\alpha$ 的任意多项式都可以用$n-1$ 次之内表示。
+* 对$h(x)$通分，可以变成 $g(x)/e(x)$的形式，$g(x),e(x)\in F[x]$。且$g(x),e(x)$ 的次数都小于$n$。
+* 因$\deg e < n$且$f$不可约，由[引理d1](#引理d1)知$f \vert e \Leftrightarrow e(\alpha) = 0$，故$e(\alpha) \ne 0$且$\gcd(e(x), f(x)) = 1$。于是存在：$u(x)f(x)+v(x)e(x) = 1 \Rightarrow \frac{1}{e(\alpha)} = v(\alpha) \in F[\alpha]$。从而$h(\alpha) = \frac{g(\alpha)}{e(\alpha)} = g(\alpha)v(\alpha) \in F[\alpha]$。
 * 考虑$1,b,b^2,\cdots,b^n$，都可以表示为 $\alpha$ 的 $n-1$次式，而$n-1$次式线性无关的只有 $n$个，知必然可以组合成$0$。得证。
 
 #### 引理d1
