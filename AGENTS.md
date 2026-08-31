@@ -41,7 +41,8 @@ tags: [标签, ...]
 
 ## Build & verify
 
-- `bundle exec jekyll build` (output `_site/`), or `bundle exec jekyll serve` for local preview.
+- **不要跑 jekyll 构建来验证笔记改动。** 本环境未安装 Ruby/bundler（`bundle` 不存在），且用户已明确要求：改完 Markdown 不必做 `jekyll build` 校验，直接交付。改动的正确性靠内容核对（数学、约定、链接目标存在性）保证。
+- `bundle exec jekyll build` (output `_site/`), or `bundle exec jekyll serve` for local preview.（仅人类本地手动操作时参考）
 - `Gemfile` pins the `github-pages` gem (what GitHub Pages runs); `jekyll-remote-theme` is the plugin that loads the theme. `Gemfile.lock` is gitignored.
 - Ruby/bundler are not required for editing notes, but there is no other lint/test for note content. `script/cibuild` just runs `jekyll build`.
 
